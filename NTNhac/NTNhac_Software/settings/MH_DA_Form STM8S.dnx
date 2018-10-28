@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<settings>
+    <Stack>
+        <FillEnabled>0</FillEnabled>
+        <OverflowWarningsEnabled>1</OverflowWarningsEnabled>
+        <WarningThreshold>90</WarningThreshold>
+        <SpWarningsEnabled>1</SpWarningsEnabled>
+        <WarnLogOnly>1</WarnLogOnly>
+        <UseTrigger>1</UseTrigger>
+        <TriggerName>main</TriggerName>
+        <LimitSize>0</LimitSize>
+        <ByteLimit>50</ByteLimit>
+    </Stack>
+    <DebugChecksum>
+        <Checksum>17867009</Checksum>
+    </DebugChecksum>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
+    <Disassembly>
+        <MixedMode>1</MixedMode>
+    </Disassembly>
+    <InterruptLog>
+        <LogEnabled>0</LogEnabled>
+        <SumEnabled>0</SumEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </InterruptLog>
+    <DataLog>
+        <LogEnabled>0</LogEnabled>
+        <SumEnabled>0</SumEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <ShowTimeSum>1</ShowTimeSum>
+    </DataLog>
+    <Breakpoints2>
+        <Count>0</Count>
+    </Breakpoints2>
+    <Interrupts>
+        <Enabled>1</Enabled>
+    </Interrupts>
+    <MemoryMap>
+        <Enabled>0</Enabled>
+        <Base>0</Base>
+        <UseAuto>0</UseAuto>
+        <TypeViolation>1</TypeViolation>
+        <UnspecRange>1</UnspecRange>
+        <ActionState>1</ActionState>
+    </MemoryMap>
+    <Trace1>
+        <Enabled>0</Enabled>
+        <ShowSource>1</ShowSource>
+    </Trace1>
+    <Simulator>
+        <Freq>16000000</Freq>
+    </Simulator>
+    <Log_file>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </Log_file>
+    <DataSample>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+    </DataSample>
+    <LogFile>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </LogFile>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
+    <Breakpoints>
+        <Count>0</Count>
+    </Breakpoints>
+    <Aliases>
+        <A0>_ "C:\Users\PC\Desktop\MH_DA_Form_STM8s\FWLib\Source\stm8s_clk.c" ""</A0>
+        <A1>_ "C:\Users\PC\Desktop\MH_DA_Form_STM8s\Main\main.c" ""</A1>
+        <A2>_ "C:\Users\PC\Desktop\MH_DA_Form_STM8s\UserSTM8\Source\user_delay.c" ""</A2>
+        <A3>_ "C:\Users\PC\Desktop\MH_DA_Form_STM8s\UserSTM8\Source\user_gpio.c" ""</A3>
+        <A4>_ "C:\Users\PC\Desktop\MH_DA_Form_STM8s\User\Source\lcd1602.c" ""</A4>
+        <A5>_ "D:\CONG VIEC\Tu Hoc Lap Trinh\TuHocSTM8s\MH_DA_STM8S\MH_DA_Timer1_PWM\FWLib\Source\stm8s_clk.c" ""</A5>
+        <A6>_ "D:\CONG VIEC\Tu Hoc Lap Trinh\TuHocSTM8s\MH_DA_STM8S\MH_DA_Timer1_PWM\FWLib\Source\stm8s_tim1.c" ""</A6>
+        <A7>_ "D:\CONG VIEC\Tu Hoc Lap Trinh\TuHocSTM8s\MH_DA_STM8S\MH_DA_Timer1_PWM\UserSTM8\Source\user_gpio.c" ""</A7>
+        <A8>_ "D:\CONG VIEC\Tu Hoc Lap Trinh\TuHocSTM8s\MH_DA_STM8S\MH_DA_Timer1_PWM\User\Source\lcd1602.c" ""</A8>
+        <A9>_ "E:\THANH NAM\1.DA_MCA_2017\6.Tháng_11\MCA_DA_AUDIOMETTER\SoftWare\MH_DA_ADCMETTER\FWLib\Source\stm8s_adc1.c" ""</A9>
+        <A10>_ "E:\THANH NAM\1.DA_MCA_2017\6.Tháng_11\MCA_DA_AUDIOMETTER\SoftWare\MH_DA_ADCMETTER\FWLib\Source\stm8s_exti.c" ""</A10>
+        <Count>11</Count>
+        <SuppressDialog>1</SuppressDialog>
+    </Aliases>
+    <DebuggerSettings>
+        <DisableInterruptsWhenStepping>0</DisableInterruptsWhenStepping>
+        <LeaveTargetRunning>0</LeaveTargetRunning>
+    </DebuggerSettings>
+</settings>

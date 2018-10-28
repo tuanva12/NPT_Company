@@ -1,0 +1,75 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=456303375
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Breakpoints2]
+Count=0
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[Simulator]
+Freq=16000000
+[DataSample]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[Breakpoints]
+Count=0
+[Aliases]
+A0=_ "C:\Users\PC\Desktop\MH_DA_Form_STM8s\FWLib\Source\stm8s_clk.c" ""
+A1=_ "C:\Users\PC\Desktop\MH_DA_Form_STM8s\Main\main.c" ""
+A2=_ "C:\Users\PC\Desktop\MH_DA_Form_STM8s\UserSTM8\Source\user_delay.c" ""
+A3=_ "C:\Users\PC\Desktop\MH_DA_Form_STM8s\UserSTM8\Source\user_gpio.c" ""
+A4=_ "C:\Users\PC\Desktop\MH_DA_Form_STM8s\User\Source\lcd1602.c" ""
+A5=_ "D:\CONG VIEC\Tu Hoc Lap Trinh\TuHocSTM8s\MH_DA_STM8S\MH_DA_Timer1_PWM\FWLib\Source\stm8s_clk.c" ""
+A6=_ "D:\CONG VIEC\Tu Hoc Lap Trinh\TuHocSTM8s\MH_DA_STM8S\MH_DA_Timer1_PWM\FWLib\Source\stm8s_tim1.c" ""
+A7=_ "D:\CONG VIEC\Tu Hoc Lap Trinh\TuHocSTM8s\MH_DA_STM8S\MH_DA_Timer1_PWM\UserSTM8\Source\user_gpio.c" ""
+A8=_ "D:\CONG VIEC\Tu Hoc Lap Trinh\TuHocSTM8s\MH_DA_STM8S\MH_DA_Timer1_PWM\User\Source\lcd1602.c" ""
+A9=_ "E:\THANH NAM\1.DA_MCA_2017\6.Tháng_11\MCA_DA_AUDIOMETTER\SoftWare\MH_DA_ADCMETTER\FWLib\Source\stm8s_adc1.c" ""
+A10=_ "E:\THANH NAM\1.DA_MCA_2017\6.Tháng_11\MCA_DA_AUDIOMETTER\SoftWare\MH_DA_ADCMETTER\FWLib\Source\stm8s_exti.c" ""
+Count=11
+SuppressDialog=1
+[DebuggerSettings]
+DisableInterruptsWhenStepping=0
