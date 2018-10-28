@@ -1,0 +1,101 @@
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Winform
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string filePath = "";
+           
+            // taòo SaveFileDialog ðêÒ lýu file excel
+            SaveFileDialog dialog = new SaveFileDialog();
+
+            // chiÒ loòc ra caìc file coì ðiònh daòng Excel
+            dialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";
+
+            // Nêìu mõÒ file vaÌ choòn nõi lýu file thaÌnh công seÞ lýu ðýõÌng dâÞn laòi duÌng
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                filePath = dialog.FileName;
+            }
+
+            // nêìu ðýõÌng dâÞn null hoãòc rôÞng thiÌ baìo không hõòp lêò vaÌ return haÌm
+            if (string.IsNullOrEmpty(filePath))
+            {
+                MessageBox.Show("Ðý?ng d?n báo cáo không h?p l?");
+                return;
+            }
+
+            using (ExcelPackage p = new ExcelPackage())
+            {
+                try
+                {
+                    costomExcel paint = new costomExcel(p);
+                    paint.MaxNumOutPut = 50;
+                    paint.NumStt = 99;
+                    paint.paintcell();
+                    Byte[] bin = p.GetAsByteArray();
+                    File.WriteAllBytes(filePath, bin);
+                    
+                    MessageBox.Show("OK");
+                }
+                catch
+                {
+                    MessageBox.Show("ERR");
+                }
+            };
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string filepath = "";
+            SaveFileDialog file = new SaveFileDialog();
+            file.Filter = "Bin files (*.BIN)|*.BIN|All files (*.*)|*.*";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                filepath = file.FileName;
+            }
+            try
+            {
+                using (FileStream stream = new FileStream(filepath, FileMode.Create))
+                {
+                    using (BinaryWriter writer = new BinaryWriter(stream))
+                    {
+                        //writer.Write("hello");
+                        //writer.Write(5);
+                        byte a = 0x23;
+                        writer.Write((byte)0x22);
+                        writer.Write((byte)0x22);
+                        writer.Write((byte)0x22);
+                        writer.Write((byte)0x01);
+                        writer.Write((byte)0x05);
+                        writer.Write(a);
+                        writer.Close();
+                    }
+                }
+                MessageBox.Show("Ok");
+            }
+            catch
+            {
+                MessageBox.Show("Err");
+            }
+        }
+    }
+}

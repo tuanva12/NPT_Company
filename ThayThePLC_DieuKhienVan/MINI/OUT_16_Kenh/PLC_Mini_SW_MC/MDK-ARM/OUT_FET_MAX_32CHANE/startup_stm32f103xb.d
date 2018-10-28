@@ -1,0 +1,1 @@
+out_fet_max_32chane\startup_stm32f103xb.o: startup_stm32f103xb.s
