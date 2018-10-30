@@ -1,0 +1,58 @@
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe.config
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\VANLOCK MINI.pdb
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.csprojResolveAssemblyReference.cache
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK_MINI.Form1.resources
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK_MINI.Properties.Resources.resources
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.csproj.GenerateResource.Cache
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.exe
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.pdb
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\EPPlus.dll
+D:\MINH HA\NGHIEN CUU\A Ha NPT\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\EPPlus.xml
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe.config
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.exe
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.pdb
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\VANLOCK MINI.pdb
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\EPPlus.dll
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\EPPlus.xml
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.csprojResolveAssemblyReference.cache
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK_MINI.Form1.resources
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK_MINI.Properties.Resources.resources
+C:\Users\AnhTuanMH\Desktop\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.csproj.GenerateResource.Cache
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe.config
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.exe
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.pdb
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe.config
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.exe
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.pdb
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\bin\Debug\VANLOCK MINI.pdb
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\bin\Debug\EPPlus.dll
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\bin\Debug\EPPlus.xml
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.csprojResolveAssemblyReference.cache
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK_MINI.Form1.resources
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK_MINI.Properties.Resources.resources
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_Chua_Hoan_Thien (23_04_2018)\MINI\OUT_16_Kenh\SW_PC_OUT_16 _V2\VANLOCK MINI\VANLOCK MINI\obj\Debug\VANLOCK MINI.csproj.GenerateResource.Cache
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe.config
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\obj\Debug\VANLOCK MINI.exe
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\obj\Debug\VANLOCK MINI.pdb
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\bin\Debug\VANLOCK MINI.pdb
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\bin\Debug\EPPlus.dll
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\bin\Debug\EPPlus.xml
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\obj\Debug\VANLOCK MINI.csprojResolveAssemblyReference.cache
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\obj\Debug\VANLOCK_MINI.Form1.resources
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\obj\Debug\VANLOCK_MINI.Properties.Resources.resources
+C:\Users\TuanVA12\Desktop\NPT\PLC_Motor_SW_ProgramComputer\VANLOCK MINI\obj\Debug\VANLOCK MINI.csproj.GenerateResource.Cache
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe.config
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\obj\Debug\VANLOCK MINI.exe
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\obj\Debug\VANLOCK MINI.pdb
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\bin\Debug\VANLOCK MINI.exe
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\bin\Debug\VANLOCK MINI.pdb
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\bin\Debug\EPPlus.dll
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\bin\Debug\EPPlus.xml
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\obj\Debug\VANLOCK MINI.csprojResolveAssemblyReference.cache
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\obj\Debug\VANLOCK_MINI.Form1.resources
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\obj\Debug\VANLOCK_MINI.Properties.Resources.resources
+E:\CONG_VIEC\KHTN\NPT Copany\ThayThePLC_DieuKhienStepMotor\PLC_Motor_SW_PC_Setting\VANLOCK MINI\obj\Debug\VANLOCK MINI.csproj.GenerateResource.Cache
