@@ -53,38 +53,38 @@ Tham Bien   :   Data: Du lieu can ghi vao.
 Tra Ve      :   Khong.
 ********************************************************************************/
 
-void CD4094_InByte(uint8_t Data)
-{
-    uint8_t i=0x01;
-    while(i)
-    {
-        CD4094_DATA=((Data&i)==i);
-        CD4094_Clock();
-        i<<=1;
-    } 
-}
-
-
 //void CD4094_InByte(uint8_t Data)
 //{
-//        (Data & 0x10) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
+//    uint8_t i=0x01;
+//    while(i)
+//    {
+//        CD4094_DATA=((Data&i)==i);
 //        CD4094_Clock();
-//        (Data & 0x20) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
-//        CD4094_Clock();
-//        (Data & 0x40) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
-//        CD4094_Clock();
-//        (Data & 0x80) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
-//        CD4094_Clock();
-//        (Data & 0x08) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
-//        CD4094_Clock();
-//        (Data & 0x04) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
-//        CD4094_Clock();
-//        (Data & 0x02) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
-//        CD4094_Clock();
-//        (Data & 0x01) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
-//        CD4094_Clock();
-//    
+//        i<<=1;
+//    } 
 //}
+
+
+void CD4094_InByte(uint8_t Data)
+{
+        (Data & 0x10) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
+        CD4094_Clock();
+        (Data & 0x20) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
+        CD4094_Clock();
+        (Data & 0x40) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
+        CD4094_Clock();
+        (Data & 0x80) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
+        CD4094_Clock();
+        (Data & 0x08) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
+        CD4094_Clock();
+        (Data & 0x04) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
+        CD4094_Clock();
+        (Data & 0x02) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
+        CD4094_Clock();
+        (Data & 0x01) ? (CD4094_DATA = 1):(CD4094_DATA = 0);
+        CD4094_Clock();
+    
+}
 
 /*******************************************************************************
 Noi Dung    :   Ghi nhieu Byte du lieu lien tiep vao CD4094.

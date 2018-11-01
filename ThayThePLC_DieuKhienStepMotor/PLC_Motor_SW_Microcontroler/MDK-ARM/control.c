@@ -12,7 +12,12 @@
 #include "flash.h"
 /********************************Define*****************************************/
 #define MAX_BYTE_DATA                100
+
+
 #define ADD_TIME_DELAY
+#define FLASH_TIME_DELAY_ADDR        0x08058D00
+#define FLASH_NUM_PULSE_ADDR         0x0805FFF0
+
 /****************************** variable ***************************************/
 FATFS fatfs;
 FIL  myfile;
@@ -26,20 +31,28 @@ uint8_t byte_data_previous[MAX_BYTE_DATA];  /* save data eff*/
 uint8_t Data_Show[MAX_BYTE_DATA * 2];       /* Chua du lieu se show ra module */
 
 static uint8_t file_name[20];               /* save file name*/
-static uint8_t ctr_byte_chanel;             /* Số byte cần để lưu data out ra các module, chieu ngang*/
+static uint8_t ctr_byte_chanel;             /* S? byte c?n d? luu data out ra c�c module, chieu ngang*/
 static uint16_t ctr_long_data_eff;          /* chieu dai cua hieu ung */
 static uint8_t   ctr_repeat;                /* So lan lap lai cua mot hieu ung */
 
 uint8_t chanel_current = 0;
-uint8_t Delay_put_pulse = 0;                /* Thoi gian delay can cho viec ban xung */
-uint8_t Num_pulse = 0;                      /* Số xung cần bắn để động cơ bước đi đúng vị trí */
+
+
+
+uint8_t  Delay_put_pulse = 100;                /* Thoi gian delay can cho viec ban xung */
+uint16_t Num_pulse = 20;                      /* S? xung c?n b?n d? d?ng co bu?c di d�ng v? tr� */
+
+uint8_t USB_Buff_Data[20];                    /* Du lieu nhan duoc tu cong USB */
+uint8_t Update_USB = 0;                      /* C? b�o c� d? ki?u du?c nh?n t? USB */
+
+
 
 /*******************************FUNCTION****************************************/
 
 
-/* Hàm chuyển đổi 4 bit đầy chủa dữ liệu nhận được thành byte cần để bắn ra module */
+/* H�m chuy?n d?i 4 bit d?y ch?a d? li?u nh?n du?c th�nh byte c?n d? b?n ra module */
 uint8_t Convest_Byte_High(uint8_t Data_Previous,uint8_t Data_Now);
-/* Hàm chuyển đổi 4 bit sau chủa dữ liệu nhận được thành byte cần để bắn ra module */
+/* H�m chuy?n d?i 4 bit sau ch?a d? li?u nh?n du?c th�nh byte c?n d? b?n ra module */
 uint8_t Convest_Byte_Low(uint8_t Data_Previous,uint8_t Data_Now);
 /*Ban xung dieu khien ra*/
 void Put_pulse(void);
@@ -87,10 +100,10 @@ void control_main_eff(void)
         {
             chanel_current = input_chanel();
         }
-        
-        if(chanel_current != 0)       /* Neu co in put đầu vào mới đọc memorycard và chạy chương trình*/
+
+        if(chanel_current != 0)       /* Neu co in put d?u v�o m?i d?c memorycard v� ch?y chuong tr�nh*/
         {
-            sprintf((char*)file_name,"eff%d.bin",chanel_current);          /* Lấy tên file để bắt đầu đọc */
+            sprintf((char*)file_name,"eff%d.bin",chanel_current);          /* L?y t�n file d? b?t d?u d?c */
 
             fresult = f_open(&myfile,(char*)file_name,FA_READ);            /* opent file */
             if(fresult == FR_OK)
@@ -100,28 +113,28 @@ void control_main_eff(void)
                 {
                     fresult = f_read(&myfile,byte_data,ctr_byte_chanel,&br);             /* read data*/
 
-                    delay_count = (((uint16_t)byte_data[0])<<8|((uint16_t)byte_data[1]));    /* Chuyển đổi giá trị delay được lưu trữ trong 2 byte đầu của mảng */
-                    shadow_data();                          /* đẩy các byte trước đi xa, tránh bị trùng khi nó nhiều module*/
+                    delay_count = (((uint16_t)byte_data[0])<<8|((uint16_t)byte_data[1]));    /* Chuy?n d?i gi� tr? delay du?c luu tr? trong 2 byte d?u c?a m?ng */
+                    shadow_data();                                                      /* d?y c�c byte tru?c di xa, tr�nh b? tr�ng khi n� nhi?u module*/
 
-                    /* Chuyển đổi từ dữ liệu đọc được trong memorycard sang dữ liệu cần bắn ra module */
+                    /* Chuy?n d?i t? d? li?u d?c du?c trong memorycard sang d? li?u c?n b?n ra module */
                     for(index = 0;index < ctr_byte_chanel ;index++)
                     {
                         Data_Show[index*2]     = Convest_Byte_High(byte_data_previous[index+2],byte_data[index+2]);
                         Data_Show[index*2 + 1] = Convest_Byte_Low(byte_data_previous[index+2],byte_data[index+2]);
                     }
 
-                    /* Dẩy dữ liệu ra các module */
+                    /* D?y d? li?u ra c�c module */
                     for(index = 0;index <= (ctr_byte_chanel * 2);index++)
                     {
                         CD4094_InByte(Data_Show[(ctr_byte_chanel * 2) - index]);
                     }
-                    CD4094_Latch();                                       /* Chốt dữ liệu */
-                    /* Bắt đầu bắn xung ra chân pulse */
+                    CD4094_Latch();                                       /* Ch?t d? li?u */
+                    /* B?t d?u b?n xung ra ch�n pulse */
                     Put_pulse();
-                    /* Kết thúc bắn xung */
+                    /* K?t th�c b?n xung */
                     HAL_Delay(delay_count);                                /* delay step epp*/
 
-                    /* copy dữ liệu đọc được cho lần so sánh sau. */
+                    /* copy d? li?u d?c du?c cho l?n so s�nh sau. */
                     for(index = 0;index < (ctr_byte_chanel + 2);index++)
                     {
                         byte_data_previous[index] = byte_data[index];
@@ -144,11 +157,11 @@ void control_main_eff(void)
 
 
 
-/* Hàm chuyển đổi 4 bit đầy chủa dữ liệu nhận được thành byte cần để bắn ra module */
+/* H�m chuy?n d?i 4 bit d?y ch?a d? li?u nh?n du?c th�nh byte c?n d? b?n ra module */
 uint8_t Convest_Byte_High(uint8_t Data_Previous,uint8_t Data_Now)
 {
     uint8_t Data_Result = 0x00;
-    /* Chuyển đổi trạng thái cho chân direction, trạng thái của chân này luôn thay đổi theo trạng thái dữ liệu đọc được*/
+    /* Chuy?n d?i tr?ng th�i cho ch�n direction, tr?ng th�i c?a ch�n n�y lu�n thay d?i theo tr?ng th�i d? li?u d?c du?c*/
     if((Data_Now & 0x80)!=0)
     {
         Data_Result |= 0x40;
@@ -165,7 +178,7 @@ uint8_t Convest_Byte_High(uint8_t Data_Previous,uint8_t Data_Now)
     {
         Data_Result |= 0x01;
     }
-    /* Chuyển đổi trạng thái cho chân ennable, trạng thái của chân này sẽ được bật nếu trạng thái bít tương ứng của lần trước và lần sau khác nhau */
+    /* Chuy?n d?i tr?ng th�i cho ch�n ennable, tr?ng th�i c?a ch�n n�y s? du?c b?t n?u tr?ng th�i b�t tuong ?ng c?a l?n tru?c v� l?n sau kh�c nhau */
     if((Data_Now & 0x80) != (Data_Previous & 0x80))
     {
         Data_Result |= 0x80;
@@ -182,15 +195,15 @@ uint8_t Convest_Byte_High(uint8_t Data_Previous,uint8_t Data_Now)
     {
         Data_Result |= 0x02;
     }
-    
+
     /* Return value*/
     return Data_Result;
 }
-/* Hàm chuyển đổi 4 bit sau chủa dữ liệu nhận được thành byte cần để bắn ra module */
+/* H�m chuy?n d?i 4 bit sau ch?a d? li?u nh?n du?c th�nh byte c?n d? b?n ra module */
 uint8_t Convest_Byte_Low(uint8_t Data_Previous,uint8_t Data_Now)
 {
     uint8_t Data_Result = 0x00;
-    /* Chuyển đổi trạng thái cho chân direction */
+    /* Chuy?n d?i tr?ng th�i cho ch�n direction */
     if((Data_Now & 0x08)!=0)
     {
         Data_Result |= 0x40;
@@ -207,7 +220,7 @@ uint8_t Convest_Byte_Low(uint8_t Data_Previous,uint8_t Data_Now)
     {
         Data_Result |= 0x01;
     }
-    /* Chuyển đổi trạng thái cho chân ennable */
+    /* Chuy?n d?i tr?ng th�i cho ch�n ennable */
     if((Data_Now & 0x08) != (Data_Previous & 0x08))
     {
         Data_Result |= 0x80;
@@ -224,7 +237,7 @@ uint8_t Convest_Byte_Low(uint8_t Data_Previous,uint8_t Data_Now)
     {
         Data_Result |= 0x02;
     }
-    
+
     /* Return value*/
     return Data_Result;
 }
@@ -234,40 +247,104 @@ uint8_t Convest_Byte_Low(uint8_t Data_Previous,uint8_t Data_Now)
 /*Ban xung dieu khien ra*/
 void Put_pulse(void)
 {
-    HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
-    HAL_Delay(50);
-    HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
-    HAL_Delay(50);
-    HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
-    HAL_Delay(50);
-    HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
-    HAL_Delay(50);
-    HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
-    HAL_Delay(50);
-    HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
-    HAL_Delay(50);
-    HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
-    HAL_Delay(50);
-    HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
-    HAL_Delay(50);
+    uint16_t index;
+    for(index = 0;index < Num_pulse;index++)
+    {
+        HAL_GPIO_TogglePin(OUT_PULS_GPIO_Port,OUT_PULS_Pin);
+        HAL_Delay(Delay_put_pulse);
+        HAL_GPIO_TogglePin(OUT_PULS_GPIO_Port,OUT_PULS_Pin);
+        HAL_Delay(Delay_put_pulse);
+    }
+    HAL_GPIO_WritePin(OUT_PULS_GPIO_Port,OUT_PULS_Pin,GPIO_PIN_RESET);
 }
 
-
+/*Ban xung dieu khien ra mac dinh*/
+void Put_pulse_default(void)
+{
+    uint16_t index;
+    for(index = 0;index < Num_pulse;index++)
+    {
+        HAL_GPIO_TogglePin(OUT_PULS_GPIO_Port,OUT_PULS_Pin);
+        HAL_Delay(1);
+        HAL_GPIO_TogglePin(OUT_PULS_GPIO_Port,OUT_PULS_Pin);
+        HAL_Delay(1);
+    }
+    HAL_GPIO_WritePin(OUT_PULS_GPIO_Port,OUT_PULS_Pin,GPIO_PIN_RESET);
+}
 
 
 
 /* Ham duoc goi trong chuong trinh chinh */
 void control(void)
 {
+    uint8_t index;
+
+    Delay_put_pulse = *(__IO uint8_t*)(FLASH_TIME_DELAY_ADDR);
+    Num_pulse       = *(__IO uint16_t*)(FLASH_NUM_PULSE_ADDR);
+
+/* Dieu chinh dong co ve vi tri ban dau */
+    for(index = 0;index < MAX_BYTE_DATA;index ++)
+    {
+        CD4094_InByte(0x55);
+    }
+    CD4094_Latch();
+    Put_pulse();
+
+/* Bat dau doc memorycard. */
    if(BSP_SD_Init() == MSD_OK);
     {
         fresult = f_mount(&fatfs,"",1);
         if(fresult ==FR_OK)
         {
-
             control_main_eff();
-
         }
+    }
+
+/* Neu khong doc duoc the nho thi vao che do cai dat */
+    HAL_GPIO_WritePin(RESET_USB_GPIO_Port,RESET_USB_Pin,GPIO_PIN_RESET);    /* Enable USB */
+    while(1)
+    {
+        if(Update_USB == 1)
+        {
+            Update_USB = 0;
+
+            /* Start analysis data received from USB port */
+            if((USB_Buff_Data[0] == 'V') && (USB_Buff_Data[1] == 'A') && (USB_Buff_Data[2] == 'T'))
+            {
+                if((USB_Buff_Data[4] == 'T') && (USB_Buff_Data[5] == 'E') && (USB_Buff_Data[6] == 'S') && (USB_Buff_Data[7] == 'T'))
+                {
+                    /* Che do test dong co */
+                    shadow_data();
+                    CD4094_InByte(0xFF);
+                    CD4094_Latch();
+                    Put_pulse_default();
+
+                    shadow_data();
+                    CD4094_InByte(0x55);
+                    CD4094_Latch();
+                    Put_pulse_default();
+                }
+                else
+                {
+                    if((USB_Buff_Data[4] == 'S') && (USB_Buff_Data[5] == 'T') && (USB_Buff_Data[6] == 'E') && (USB_Buff_Data[7] == 'P'))
+                    {
+                        /* Ghi vao so buoc */
+                        FLASH_WriteBytes(FLASH_NUM_PULSE_ADDR,&USB_Buff_Data[8],2);
+                        Num_pulse       = *(__IO uint16_t*)(FLASH_NUM_PULSE_ADDR);
+                    }
+                    else
+                    {
+                        if((USB_Buff_Data[4] == 'D') && (USB_Buff_Data[5] == 'E') && (USB_Buff_Data[6] == 'L') && (USB_Buff_Data[7] == 'Y'))
+                        {
+                            /* Ghi vao thoi gian delay */
+                            FLASH_WriteBytes(FLASH_TIME_DELAY_ADDR,&USB_Buff_Data[8],1);
+                            Delay_put_pulse = *(__IO uint8_t*)(FLASH_TIME_DELAY_ADDR);
+                        }
+                    }
+                }
+            }
+        }
+        HAL_Delay(10);
     }
 }
 

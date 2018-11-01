@@ -25,7 +25,7 @@ void shadow_data(void);
 uint8_t input_chanel(void);
 
 /* run eff */
-void run_step_eff();
+
 
 
 
