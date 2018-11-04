@@ -55,7 +55,7 @@ uint8_t input_chanel(void)
     {
         data |= 0x08;
     }
-    return 1;
+    return data;
 }
 
 

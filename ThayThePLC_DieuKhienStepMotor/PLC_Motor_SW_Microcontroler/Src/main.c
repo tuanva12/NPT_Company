@@ -61,7 +61,7 @@ SD_HandleTypeDef hsd;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
+extern uint8_t Update_USB;
 
 /* USER CODE END PV */
 
@@ -76,7 +76,72 @@ static void MX_SDIO_SD_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-
+void delay_us(uint16_t Us_Time)
+{
+    while(--Us_Time)
+    {
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+    }
+}
 /* USER CODE END 0 */
 
 int main(void)
@@ -139,26 +204,37 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
 
-//        while(BT4_Is_Low()) HAL_GPIO_WritePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin,GPIO_PIN_SET);
-//        HAL_GPIO_WritePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin,GPIO_PIN_RESET);
-//        HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
-//        HAL_GPIO_TogglePin(OUT_PULS_GPIO_Port,OUT_PULS_Pin);
-        //HAL_Delay(50);
-//        CD4094_InByte(0xAA);
-//        CD4094_InByte(0xAA);
-//        CD4094_InByte(0xAA);
-//        CD4094_Latch();
-//        HAL_Delay(200);
-//        CD4094_InByte(0x00);
-//        CD4094_InByte(0x00);
-//        CD4094_InByte(0x00);
-//        CD4094_Latch();
-
-//        HAL_Delay(200);
     }
   /* USER CODE END 3 */
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /** System Clock Configuration
 */
