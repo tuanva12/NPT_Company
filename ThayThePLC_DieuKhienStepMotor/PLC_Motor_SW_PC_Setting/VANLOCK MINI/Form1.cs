@@ -56,6 +56,7 @@ namespace VANLOCK_MINI
             try
             {
                 serialPort_com.Open();
+                serialPort_com.WriteLine("VAT_TEST");
                 btn_Test.BackColor = Color.BlueViolet;
                 btn_Test.Text = "TEST";
                 panel_genaral.Enabled = true;
@@ -85,9 +86,22 @@ namespace VANLOCK_MINI
 
         private void btn_Setstep_Click(object sender, EventArgs e)
         {
+            byte[] DATA_SEND_ARR = new byte[10];
+            int BUFF_STEP;
+            DATA_SEND_ARR[0] = (byte)'V';
+            DATA_SEND_ARR[1] = (byte)'A';
+            DATA_SEND_ARR[2] = (byte)'T';
+            DATA_SEND_ARR[3] = (byte)'_';
+            DATA_SEND_ARR[4] = (byte)'S';
+            DATA_SEND_ARR[5] = (byte)'T';
+            DATA_SEND_ARR[6] = (byte)'E';
+            DATA_SEND_ARR[7] = (byte)'P';
             try
             {
-                serialPort_com.WriteLine("STEP_" + tb_setStep.Text + "#");
+                BUFF_STEP = int.Parse(tb_setStep.Text);
+                DATA_SEND_ARR[9] = (byte)(BUFF_STEP >> 8);
+                DATA_SEND_ARR[8] = (byte)(BUFF_STEP);
+                serialPort_com.Write(DATA_SEND_ARR, 0, 10);
             }
             catch
             {
@@ -98,9 +112,19 @@ namespace VANLOCK_MINI
 
         private void btn_SetDelay_Click(object sender, EventArgs e)
         {
+            byte[] DATA_SEND_ARR = new byte[10];
+            DATA_SEND_ARR[0] = (byte)'V';
+            DATA_SEND_ARR[1] = (byte)'A';
+            DATA_SEND_ARR[2] = (byte)'T';
+            DATA_SEND_ARR[3] = (byte)'_';
+            DATA_SEND_ARR[4] = (byte)'D';
+            DATA_SEND_ARR[5] = (byte)'E';
+            DATA_SEND_ARR[6] = (byte)'L';
+            DATA_SEND_ARR[7] = (byte)'Y';
             try
             {
-                serialPort_com.WriteLine("DELAY_" + tb_setDelay.Text + "#");
+                DATA_SEND_ARR[8] = byte.Parse(tb_setDelay.Text);
+                serialPort_com.Write(DATA_SEND_ARR, 0,10);
             }
             catch
             {

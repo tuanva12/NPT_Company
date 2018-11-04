@@ -125,6 +125,7 @@
             this.tb_setStep.Name = "tb_setStep";
             this.tb_setStep.Size = new System.Drawing.Size(309, 129);
             this.tb_setStep.TabIndex = 0;
+            this.tb_setStep.Text = "60";
             this.tb_setStep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // tb_setDelay
@@ -137,6 +138,7 @@
             this.tb_setDelay.Name = "tb_setDelay";
             this.tb_setDelay.Size = new System.Drawing.Size(310, 129);
             this.tb_setDelay.TabIndex = 1;
+            this.tb_setDelay.Text = "1";
             this.tb_setDelay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // tableLayoutPanel2
