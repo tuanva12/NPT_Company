@@ -138,7 +138,7 @@ namespace Winform
             Z.Style.Border.Bottom.Style = ExcelBorderStyle.Thick;
 
             var ZZ = sheets.Cells[3, 2];
-            ZZ.Value = numStt.ToString();
+            ZZ.Formula = "=SUM(B5:B5000)";
             ZZ.Style.Border.Left.Style =
             ZZ.Style.Border.Right.Style =
             ZZ.Style.Border.Top.Style =

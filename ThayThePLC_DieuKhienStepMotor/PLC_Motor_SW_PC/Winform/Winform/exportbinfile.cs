@@ -130,10 +130,18 @@ namespace Winform
                     {
                         if (x != 0)
                         {
-                            if (int.Parse(value.ToString()) == 1)
+                            try
                             {
-                                buff[x] = 1;
+                                if (int.Parse(value.ToString()) == 1)
+                                {
+                                    buff[x] = 1;
+                                }
                             }
+                            catch
+                            {
+                                buff[x] = 0;
+                            }
+                            
                         }
                         else
                         {
@@ -144,7 +152,7 @@ namespace Winform
                             catch
                             {
                                 MessageBox.Show(String.Format("Kiểm tra lại dòng thứ {0}!!!", Y_Count), "Lỗi", MessageBoxButtons.OK);
-                                buff[x] = int.Parse(value.ToString());
+                                buff[x] = int.Parse(value.ToString());     /* co tinh Cho them dong nay vao de chay loi */
                                
                             }
                         }
