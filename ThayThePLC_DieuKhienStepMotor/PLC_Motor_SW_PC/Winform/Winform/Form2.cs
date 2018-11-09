@@ -81,7 +81,7 @@ namespace Winform
                     costomExcel paint = new costomExcel(p);
                     paint.MaxNumOutPut = int.Parse(tb_sokenh.Text);
                     paint.NumStt = 99;
-                    paint.Numrepeat = int.Parse(tb_repeat.Text);
+                    paint.Numrepeat = 0;
                     paint.paintcell();
                     Byte[] bin = p.GetAsByteArray();
                     File.WriteAllBytes(filePath, bin);

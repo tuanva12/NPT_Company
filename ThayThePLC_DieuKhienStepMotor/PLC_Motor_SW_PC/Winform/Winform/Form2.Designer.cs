@@ -34,9 +34,7 @@
             this.btn_huy = new System.Windows.Forms.Button();
             this.btn_OK = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tb_sokenh = new System.Windows.Forms.TextBox();
-            this.tb_repeat = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -93,38 +91,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 35);
+            this.label2.Location = new System.Drawing.Point(219, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "So Kenh";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(326, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "So Lan Lap";
-            // 
             // tb_sokenh
             // 
             this.tb_sokenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tb_sokenh.Location = new System.Drawing.Point(59, 51);
+            this.tb_sokenh.Location = new System.Drawing.Point(185, 53);
             this.tb_sokenh.Name = "tb_sokenh";
             this.tb_sokenh.Size = new System.Drawing.Size(100, 45);
             this.tb_sokenh.TabIndex = 4;
             this.tb_sokenh.Text = "8";
-            // 
-            // tb_repeat
-            // 
-            this.tb_repeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tb_repeat.Location = new System.Drawing.Point(308, 51);
-            this.tb_repeat.Name = "tb_repeat";
-            this.tb_repeat.Size = new System.Drawing.Size(100, 45);
-            this.tb_repeat.TabIndex = 5;
-            this.tb_repeat.Text = "1";
             // 
             // Form2
             // 
@@ -133,9 +113,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(485, 141);
-            this.Controls.Add(this.tb_repeat);
             this.Controls.Add(this.tb_sokenh);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -160,8 +138,6 @@
         private System.Windows.Forms.Button btn_OK;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_sokenh;
-        private System.Windows.Forms.TextBox tb_repeat;
     }
 }

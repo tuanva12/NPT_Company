@@ -116,14 +116,14 @@ namespace Winform
 
             /////////////////////// So lan lap hieu ung
             var y = sheets.Cells[2, 1];
-            y.Value = "REPEAT";
+           // y.Value = "REPEAT";
             y.Style.Border.Left.Style =
             y.Style.Border.Right.Style =
             y.Style.Border.Top.Style =
             y.Style.Border.Bottom.Style = ExcelBorderStyle.Thick;
 
             var YY = sheets.Cells[2, 2];
-            YY.Value = numrepeat.ToString();
+           // YY.Value = numrepeat.ToString();
             YY.Style.Border.Left.Style =
             YY.Style.Border.Right.Style =
             YY.Style.Border.Top.Style =
