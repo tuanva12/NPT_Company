@@ -113,6 +113,7 @@ namespace VANLOCK_MINI
         private void btn_SetDelay_Click(object sender, EventArgs e)
         {
             byte[] DATA_SEND_ARR = new byte[10];
+            int BUFF_STEP;
             DATA_SEND_ARR[0] = (byte)'V';
             DATA_SEND_ARR[1] = (byte)'A';
             DATA_SEND_ARR[2] = (byte)'T';
@@ -123,8 +124,10 @@ namespace VANLOCK_MINI
             DATA_SEND_ARR[7] = (byte)'Y';
             try
             {
-                DATA_SEND_ARR[8] = byte.Parse(tb_setDelay.Text);
-                serialPort_com.Write(DATA_SEND_ARR, 0,10);
+                BUFF_STEP = int.Parse(tb_setDelay.Text);
+                DATA_SEND_ARR[9] = (byte)(BUFF_STEP >> 8);
+                DATA_SEND_ARR[8] = (byte)(BUFF_STEP);
+                serialPort_com.Write(DATA_SEND_ARR, 0, 10);
             }
             catch
             {
