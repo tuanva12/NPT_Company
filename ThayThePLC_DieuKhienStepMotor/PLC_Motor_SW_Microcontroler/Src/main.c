@@ -76,72 +76,7 @@ static void MX_SDIO_SD_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-void delay_us(uint16_t Us_Time)
-{
-    while(--Us_Time)
-    {
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-        __NOP();__NOP();__NOP();__NOP();
-    }
-}
+
 /* USER CODE END 0 */
 
 int main(void)

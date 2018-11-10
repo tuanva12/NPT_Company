@@ -39,7 +39,7 @@ uint8_t chanel_current = 0;
 
 
 
-uint8_t  Delay_put_pulse = 100;                /* Thoi gian delay can cho viec ban xung */
+uint16_t  Delay_put_pulse = 1;                /* Thoi gian delay can cho viec ban xung */
 uint16_t Num_pulse = 20;                      /* S? xung c?n b?n d? d?ng co bu?c di d?ng v? tr?*/
 
 uint8_t USB_Buff_Data[20];                    /* Du lieu nhan duoc tu cong USB */
@@ -59,6 +59,7 @@ void Put_pulse(void);
 
 /*********************************CODE******************************************/
 
+/* Hàm đọc các giá trị ban đầu của file */
 void read_byte_init()
 {
     f_read(&myfile,byte_init,4,&br);
@@ -72,13 +73,87 @@ void read_byte_init()
     eff_init(ctr_byte_chanel,ctr_long_data_eff,ctr_repeat);
 }
 
-
-void read_data_eff(void)
+/* Hàm delay sử dụng bắn xung cho động cơ */
+void Delay_pulse(uint16_t time_delay)
 {
-    f_read(&myfile,byte_data,ctr_byte_chanel,&br);
+    uint16_t t;
+    while(--time_delay)
+    {
+        for(t=0;t<1000;t++)
+        {
+            __NOP();__NOP();__NOP();__NOP();
+        }
+    }
 }
 
 
+
+void delay_us(uint16_t Us_Time)
+{
+    while(--Us_Time)
+    {
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();
+    }
+}
 
 /* main */
 void control_main_eff(void)
@@ -159,7 +234,6 @@ void control_main_eff(void)
             shadow_data();
             CD4094_Latch();
         }
-
     }
 }
 
@@ -205,6 +279,7 @@ uint8_t Convest_Byte_High(uint8_t Data_Previous,uint8_t Data_Now)
     /* Return value*/
     return Data_Result;
 }
+
 /* H? chuy?n d?i 4 bit sau ch?a d? li?u nh?n du?c th?h byte c?n d? b?n ra module */
 uint8_t Convest_Byte_Low(uint8_t Data_Previous,uint8_t Data_Now)
 {
@@ -257,12 +332,16 @@ void Put_pulse(void)
     for(index = 0;index < Num_pulse;index++)
     {
         HAL_GPIO_TogglePin(OUT_PULS_GPIO_Port,OUT_PULS_Pin);
-        HAL_Delay(Delay_put_pulse);
+        delay_us(140);
+        //HAL_Delay(1);
         HAL_GPIO_TogglePin(OUT_PULS_GPIO_Port,OUT_PULS_Pin);
-        HAL_Delay(Delay_put_pulse);
+        delay_us(140);
+        //HAL_Delay(1);
     }
     HAL_GPIO_WritePin(OUT_PULS_GPIO_Port,OUT_PULS_Pin,GPIO_PIN_SET);
 }
+
+
 
 /*Ban xung dieu khien ra mac dinh*/
 void Put_pulse_default(void)
@@ -322,6 +401,7 @@ void control(void)
         {
             break;
         }
+//        Put_pulse();
     }
     HAL_GPIO_WritePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin,GPIO_PIN_SET);        /* Tat LED */
     while(1)
@@ -366,7 +446,7 @@ void control(void)
                             /* Ghi vao thoi gian delay */
                             HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
                             FLASH_WriteBytes(FLASH_TIME_DELAY_ADDR,&USB_Buff_Data[8],1);
-                            Delay_put_pulse = *(__IO uint8_t*)(FLASH_TIME_DELAY_ADDR);
+                            Delay_put_pulse = *(__IO uint16_t*)(FLASH_TIME_DELAY_ADDR);
                             HAL_Delay(100);
                             HAL_GPIO_TogglePin(LED_BLINK_GPIO_Port,LED_BLINK_Pin);
                         }
@@ -377,8 +457,6 @@ void control(void)
         HAL_Delay(10);
     }
 }
-
-
 
 
 
